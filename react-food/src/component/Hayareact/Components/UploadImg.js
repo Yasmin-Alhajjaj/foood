@@ -23,11 +23,23 @@ handleImageChange = (e) => {
 }
 
 render() {
+  let {imageUrl} = this.state;
+      let $image = null;
+      if (imageUrl) {
+        $image = (<div style={{border: '2px solid blue'}}><img style={{ width: '100px', height: '100px'}} src={imageUrl} /></div>);
+      } else {
+        $image = (<p>Please upload your meal photo</p>);
+      }
     return (
+      <>
         <input
+	    	style={{display: 'none'}}
             type="file" 
             onChange={(e)=>this.handleImageChange(e)}
             ref={input => this.input = input}/>
+        <button onClick={()=>this.input.click()}>Upload Image</button>
+        
+      </>
     )
 }
 }
