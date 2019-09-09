@@ -18,6 +18,13 @@ router.get('/defult', (req, res) => {
   })
 });
 
+router.post('/posts', (req, res) => {
+  let newUser = req.body;
+
+  mongo.create(newUser, (result) => {
+      res.json(result);
+  })
+});
 
 /////////getallpost
 router.get('/all', (req, res) => {
