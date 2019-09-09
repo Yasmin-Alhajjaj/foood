@@ -38,7 +38,7 @@ render() {
             onChange={(e)=>this.handleImageChange(e)}
             ref={input => this.input = input}/>
         <button onClick={()=>this.input.click()}>Upload Image</button>
-        
+        {$image}
       </>
     )
 }
