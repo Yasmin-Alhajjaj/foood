@@ -7,22 +7,18 @@ export default class Counter extends Component {
     counter: 'number'
   }
 
-componentWillUnmount(){
-  axios.get('http://localhost:9000/all')
-  .then(res => {this.setState({counter: res.data})
-  console.log('res.data' ,res)}
-  )
-  console.log('this.state.counter' ,this.state.counter)
+componentWillMount(){
+  axios.get('http://localhost:9000/post/all')
+  .then(res => this.setState({counter: res.data.length}))
+  .catch(err => console.log(err))
 }
 
 
     render(){
         return(
             <>
-              <div>
-                Counter
+              <div style={{borderRadius: '50%',display: 'inline',padding: '10px', backgroundColor: 'red'}}>
                 {this.state.counter}
-                {console.log('this.state.counter = ' ,this.state.counter)}
               </div>
             </>
         )
