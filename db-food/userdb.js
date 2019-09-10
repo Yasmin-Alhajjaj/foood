@@ -37,6 +37,17 @@ let newuser = (cb,firstName,lastName,phone,email,password) => {
 }
 
 
+
+let newpost = (newuser,cb) => {
+  db.userdata.create(newuser, (err, data) => {
+    if (err) {
+      cb(err)
+    } else {
+      cb(data)
+    }
+  })
+}
+
 ///////////getall
 let getall = cb => {
   db.userdata.find({}, (err, data) => {
@@ -68,5 +79,6 @@ module.exports = {
   creatdefult,
     // newuser,
     getall,
-    // getlogin
+    getlogin,
+    newpost
 };
