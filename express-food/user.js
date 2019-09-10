@@ -17,7 +17,7 @@ router.get('/defult', (req, res) => {
 });
 
 ////////////newuser
-router.post('/:name/:phone/:password', (req, res) => {
+router.post('newuser', (req, res) => {
  
    let name = encodeURIComponent(req.params.name);
    let phone = encodeURIComponent(req.params.phone);
@@ -30,6 +30,21 @@ router.post('/:name/:phone/:password', (req, res) => {
       res.json(result);
     },name,phone,password)
  });
+
+
+
+/// new user 
+ router.post('/newuser', (req, res) => {
+  // console.log("server",name,phone,password);
+
+  let newuser = req.body;
+  mongo.newpost(newuser, (result) => {
+     res.json(result);
+   })
+});
+
+
+
 
 
 //////////////getall

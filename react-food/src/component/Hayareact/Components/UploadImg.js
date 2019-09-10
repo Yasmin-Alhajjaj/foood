@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 export default class UploadImg extends Component{
     state = {
@@ -20,6 +21,11 @@ handleImageChange = (e) => {
   }
   // console.log(reader)
   reader.readAsDataURL(file)
+}
+
+componentWillMount(url){
+  axios.post('http://localhost:9000/post/url', url)
+  .then(res => this.setState({}))
 }
 
 render() {
