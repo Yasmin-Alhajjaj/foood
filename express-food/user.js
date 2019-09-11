@@ -17,7 +17,9 @@ router.get('/defult', (req, res) => {
 });
 
 /////ahmad///////newuser
-router.post('/:firstName/:lastName/:phone/:email/:password', (req, res) => {
+// router.post('/:firstName/:lastName/:phone/:email/:password', (req, res) => {
+////////////newuser
+router.post('newuser', (req, res) => {
  
    let firstName = encodeURIComponent(req.params.firstName);
    let lastName = encodeURIComponent(req.params.lastName);
@@ -32,6 +34,21 @@ router.post('/:firstName/:lastName/:phone/:email/:password', (req, res) => {
       res.json(result);
     },firstName,lastName,phone,email,password)
  });
+
+
+
+/// new user 
+ router.post('/newuser', (req, res) => {
+  // console.log("server",name,phone,password);
+
+  let newuser = req.body;
+  mongo.newpost(newuser, (result) => {
+     res.json(result);
+   })
+});
+
+
+
 
 
 //////////////getall
