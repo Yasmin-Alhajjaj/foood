@@ -2,7 +2,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Abdalla from './component/Abdallareact/Abdulla';
-// import Ahmad from './component/Ahmadreact/Ahmad';
 // import Haya from './component/Hayareact/Haya';
 import Yasmin from './component/yasminreact/Yasmin';
 
@@ -17,7 +16,7 @@ export default class App extends Component {
 
         
      {/* <Router> */}
-<Yasmin/>
+<Abdalla/>
       {/* </Router> */}
       </div>
       ); 

@@ -4,6 +4,7 @@ export default class PostItem extends Component {
   state = {
     posts: []
   };
+  
   // getPost = () => {
   //   axios
   //     .get("http://localhost:9000/post/all")
