@@ -34,7 +34,7 @@ export class SignUp extends Component {
         firstName: "",
         lastName: "",
         email: "",
-        phone: Number,
+        phone: "",
         password: "",
 
       }
@@ -110,7 +110,7 @@ export class SignUp extends Component {
       
       <div className="wrapper">
         <div className="form-wrapper">
-          <h1>Sign-Up</h1>
+          <h1>Sign Up</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="firstName">
               <label htmlFor="firstName">First Name</label>

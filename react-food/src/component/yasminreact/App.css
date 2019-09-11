@@ -1,4 +1,23 @@
 
+.about {
+  /* width: 100% ; */
+  background-image: url("https://image.freepik.com/free-photo/basil-leaves-chia-seeds-halved-tomato-oil-arranged-white-wooden-floor_23-2148026880.jpg");
+
+  /* Full height */
+  height: 620px ; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+
+
+
 .wrapper {
     /* height: 100vh; */
     width: 100%;
@@ -98,7 +117,8 @@
   .firstName,
   .lastName,
   .email,
-  .password {
+  .password,
+  .phone {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
@@ -108,10 +128,12 @@
   .firstName,
   .lastName {
     width: 50%;
+    padding: 3px;
   }
   
   .email,
-  .password {
+  .password,
+  .phone {
     width: 100%;
   }
   

@@ -23,7 +23,7 @@ export default class Input extends Component {
          
       };
       Share= (newPost) => {
-        // e.preventDefault();
+        //  e.preventDefault();
             axios.post(`http://localhost:9000/post/post`,newPost)
             .then(res => {
               console.log('res.data', res.data)
