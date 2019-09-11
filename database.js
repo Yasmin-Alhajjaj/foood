@@ -28,7 +28,7 @@ let foodSchema = new mongoose.Schema({
   namefood: String,
   amount:String,
   description: String,
-  location: String,
+  location:String,
   booking: Boolean,
 });
 
