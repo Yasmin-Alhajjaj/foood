@@ -14,11 +14,8 @@ export default class App extends Component {
     render() {
       return(
      <>
-        {/* <Abdalla /> */}
-        
-     {/* <Router> */}
-{/* <Yasmin/> */}
-      {/* </Router> */}
+      App
+      <Haya/>
       </>
       ); 
     }

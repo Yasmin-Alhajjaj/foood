@@ -25,6 +25,7 @@ router.post('/posts', (req, res) => {
       res.json(result);
   })
 });
+<<<<<<< HEAD
 
 ////////////newpost
 router.post('/:namefood/:description/:location/:booking', (req, res) => {
@@ -45,6 +46,8 @@ router.post('/:namefood/:description/:location/:booking', (req, res) => {
 
 
 
+=======
+>>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
 
 /////////getallpost
 router.get('/all', (req, res) => {

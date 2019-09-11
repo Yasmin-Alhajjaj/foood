@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export default class Input extends Component {
 <<<<<<< HEAD
+<<<<<<< HEAD
     state={
         namefood :"",
         amount:"",
@@ -10,6 +11,8 @@ export default class Input extends Component {
         location:"",
         booking: true
 =======
+=======
+>>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
   state={
     form:{
       namefood :"",
@@ -19,11 +22,15 @@ export default class Input extends Component {
       file: '',
       imageUrl: '',
       booking: true}
+<<<<<<< HEAD
 >>>>>>> fullstack image uplouad
+=======
+>>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
     };
 
     handleInput = e => {
         e.preventDefault();
+<<<<<<< HEAD
 <<<<<<< HEAD
         if(e.target.name==="se"){
           this.state.location=e.target.value
@@ -42,6 +49,8 @@ export default class Input extends Component {
               console.log('res.data', res.data)
                 this.state=res.data
 =======
+=======
+>>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
         let name = e.target.name
         let value = e.target.value
         if(name === "location"){
@@ -59,11 +68,15 @@ export default class Input extends Component {
             .then(res => {
               console.log('res.data', res.data)
                 this.state.form=res.data
+<<<<<<< HEAD
 >>>>>>> fullstack image uplouad
+=======
+>>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
             })
             .catch(err => {
               console.log(err);
             });
+<<<<<<< HEAD
 <<<<<<< HEAD
 
       }
@@ -73,6 +86,8 @@ export default class Input extends Component {
         return (
             <div>
 =======
+=======
+>>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
       }
 
       handleImageChange = (e) => {
@@ -98,7 +113,10 @@ export default class Input extends Component {
       }
         return (
             <div style={{border: 'solid 2px black'}}>
+<<<<<<< HEAD
 >>>>>>> fullstack image uplouad
+=======
+>>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
                 <form
           style={{
             padding: "25px"
