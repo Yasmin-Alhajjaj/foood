@@ -157,8 +157,8 @@ export default class Input extends Component {
             <button
             className="btn btn-outline-success btn-lg"
             onClick={()=>this.input.click()}>Upload Image</button>
-            {console.log('this.state.form', this.state.form)}     
-            {console.log('this.state.form.imageUrl', this.state.form.namefood)}   
+            {/* {console.log('this.state.form', this.state.form)}      */}
+            {/* {console.log('this.state.form.imageUrl', this.state.form.namefood)}    */}
             {$image}
 
             <h1>haya:{this.state.form.imageUrl}</h1>
