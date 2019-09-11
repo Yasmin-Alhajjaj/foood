@@ -31,7 +31,6 @@ let creatpost = (newPost,cb) => {
   
 }
 
-<<<<<<< HEAD
 
 /////////newpost
 let newpost=(cb,namefood,description,location,booking) =>{
@@ -50,8 +49,6 @@ db.fooddata.create(
   })
 }
 
-=======
->>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
 let create = (newpost ,cb) => {
   db.fooddata.create(newpost, (err, data) => {
     if (err) {
@@ -91,15 +88,9 @@ db.fooddata.find({}, (err, data) => {
 
   module.exports = {
     creatdefult,
-<<<<<<< HEAD
-<<<<<<< HEAD
     newpost,
-=======
     create,
->>>>>>> first version of counter _ full stack
-=======
     create,
->>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
     getallpost,
     updatepost,
     creatpost   

@@ -2,17 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class Input extends Component {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    state={
-        namefood :"",
-        amount:"",
-        description:"",
-        location:"",
-        booking: true
-=======
-=======
->>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
   state={
     form:{
       namefood :"",
@@ -22,35 +11,10 @@ export default class Input extends Component {
       file: '',
       imageUrl: '',
       booking: true}
-<<<<<<< HEAD
->>>>>>> fullstack image uplouad
-=======
->>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
     };
 
     handleInput = e => {
         e.preventDefault();
-<<<<<<< HEAD
-<<<<<<< HEAD
-        if(e.target.name==="se"){
-          this.state.location=e.target.value
-        }
-        
-        console.log('ffff', e.target.name)
-        console.log('object', e.target.value)
-       this.setState({ [e.target.name] : e.target.value})
-       console.log('this.state', this.state)
-         
-      };
-      Share= (newPost) => {
-        // e.preventDefault();
-            axios.post(`http://localhost:9000/post/post`,newPost)
-            .then(res => {
-              console.log('res.data', res.data)
-                this.state=res.data
-=======
-=======
->>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
         let name = e.target.name
         let value = e.target.value
         if(name === "location"){
@@ -67,28 +31,11 @@ export default class Input extends Component {
             axios.post(`http://localhost:9000/post/post`,newPost)
             .then(res => {
               console.log('res.data', res.data)
-                this.state.form=res.data
-<<<<<<< HEAD
->>>>>>> fullstack image uplouad
-=======
->>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
-            })
+                this.state.form=res.data})
             .catch(err => {
               console.log(err);
-            });
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-      }
-    
-    render() {
-        // console.log('state', this.state)
-        return (
-            <div>
-=======
-=======
->>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
-      }
+            })
+          }
 
       handleImageChange = (e) => {
         e.preventDefault();
@@ -113,10 +60,6 @@ export default class Input extends Component {
       }
         return (
             <div style={{border: 'solid 2px black'}}>
-<<<<<<< HEAD
->>>>>>> fullstack image uplouad
-=======
->>>>>>> 968b97c46c0a59060a0c4b8887d7cb050fa664c7
                 <form
           style={{
             padding: "25px"
