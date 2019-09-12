@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-//import axios from 'axios';
-// import {  NavLink } from "react-router-dom";
+import axios from "axios";
 
 // import SignIn from "/SignIn"
-
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
-
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
 
@@ -29,20 +26,25 @@ export class SignIn extends Component {
     super(props);
 
     this.state = {
-      firstName:null,
-      email: null,
-      password: null,
+      
+      email: "",
+      password: "",
+      linkLogin: "/Input",
       formErrors: {
-        firstName:"",
         email: "",
         password: "",
-
-      }
+        exist:""
+      },
     };
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
+    const user = {
+      email:this.state.email,
+      password:this.state.password
+    }
+
     if (formValid(this.state)) {
       console.log(`
       --SUBMITTING--
@@ -52,15 +54,31 @@ export class SignIn extends Component {
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
     }
+console.log("REACT", user)
+    axios
+    .post(`http://localhost:9000/user/signIn`, user)
+    .then(response => {
+          console.log("React:get response.data", response.data.length >= 1 ? true : false);
+          if(response.data.length === 0)
+          {
+            let formError ={...this.state.formErrors} 
+            formError.exist="this user is not exist"
+            this.setState({formErrors: formError})
 
-    // axios.post('http://localhost:9000/SignIn', user)
-    // .then(res => {
-    //   console.log(res.data);
-    // })
-    // .catch(err => console.log(err))
+          }
+
+            window.location = this.state.linkLogin;
+           
+
+
+
+    })
+    .catch(error => {
+      console.log("Error", error);
+    });
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
     let formErrors = this.state.formErrors;
@@ -84,6 +102,7 @@ export class SignIn extends Component {
         break;
         default:
           break;
+          
     }
 
     this.setState({formErrors, [name]: value }, () => console.log(this.state))
@@ -92,34 +111,12 @@ export class SignIn extends Component {
   render() {
     const { formErrors } = this.state;
     return (
-<>
-
-
-
-      <div className="wrapper"   >
+      <div className="wrapper">
         <div className="form-wrapper">
-          <h1 >Welcome !</h1>
+          <h1>Food Donation</h1>
+          <h3>Sign In</h3>
           <form onSubmit={this.handleSubmit} noValidate>
             
-          <div className="email">
-              <label htmlFor="first Name">Name</label>
-              <input
-                className={formErrors.firstName.length > 0 ? "error" : null}
-                placeholder="firstName"
-                type="text"
-                name="firstName"
-                noValidate
-                onChange={this.handleChange}
-              />
-              {formErrors.firstName.length > 0 && (
-                <span className="errorMessage">{formErrors.firstName}</span>
-              )}
-            </div>
-
-
-
-
-
             <div className="email">
               <label htmlFor="email">Email</label>
               <input
@@ -149,7 +146,9 @@ export class SignIn extends Component {
               )}
             </div>
             <div className="createAccount">
-              <button type="submit" onClick={this.props.getlogin.bind(this,this.state.firstName,this.state.email,this.state.password)} >Sign In</button>
+              <button type="submit">Sign In</button>
+          <span className="errorMessage">{formErrors.exist}</span>
+          
               <Link to="/" className="FormField__Link">
               Create an account
             </Link>
@@ -157,7 +156,6 @@ export class SignIn extends Component {
           </form>
         </div>
       </div>
-      </>
     );
   }
 }

@@ -48,7 +48,7 @@ update=(bookedup)=>{
  render() {
    
    return (
-     <div className="row postitem"  >
+     <div className="row postitem" style={{display:"flex"}} >
        {this.state.posts.map((post,key) => {
           // let $image = null;
           // if (post.imageUrl) {
@@ -57,8 +57,8 @@ update=(bookedup)=>{
           //   $image = (<p>Please upload your meal photo</p>);
           // }
          return (
-           <div key={key} className="col-3" style={{margin:"30px" }} >
-           <div className="card" style={{ width: "18rem",border: 'solid 1px black' }}>
+           <div key={key} className="col-4" style={{ marginTop:"30px" ,display:"flex" , justifyContent:"space-around"}} >
+           <div className="card" style={{ width: "25rem",border: 'solid 1px black' }}>
              <img src={post.imageUrl}  className="card-img-top" alt=""/>
              {/* {$image} */}
              <div className="card-body" style={{textAlign:"right" }}  >
@@ -71,7 +71,7 @@ update=(bookedup)=>{
                </ul>
                <div className="card-body" >
                {/* <button  className="card-link">{post.booking}</button> */}
-              <button   style={{width:"100%" , color:(post.booking)?"green":"red"  }}  >BOOKING</button>
+              <button className="btn btn-dark"  style={{width:"100%" , color:(post.booking)?"green":"red"  }}  >BOOKING</button>
                </div>
                </div>{post.booking}
              </div>

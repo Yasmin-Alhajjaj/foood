@@ -71,7 +71,7 @@ db.fooddata.find({}, (err, data) => {
       console.log("data:", data);
       cb(data);
     }
-  });
+  }).sort({_id: -1});
   }
 
 

@@ -17,6 +17,8 @@ export default class Footer extends Component {
         return (
             <div style={footer}>
               <footer>
+                  <p>MORE INFO
+Phone: 090-090-0320 Email: tk@company.co</p>
                     <p>Posted by:Food Donater</p>
                     <p>Contact information: <a href="mailto:someone@example.com">
                         FoodDonater@FoodDonater.com</a></p>

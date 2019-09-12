@@ -22,11 +22,11 @@ router.get('/defult', (req, res) => {
 ////////////newuser
 //router.post('newuser', (req, res) => {
  
-   let firstName = encodeURIComponent(req.params.firstName);
-   let lastName = encodeURIComponent(req.params.lastName);
-   let phone = encodeURIComponent(req.params.phone);
-   let email = encodeURIComponent(req.params.email);
-   let password = encodeURIComponent(req.params.password);
+   let firstName = (req.params.firstName);
+   let lastName = (req.params.lastName);
+   let phone = (req.params.phone);
+   let email = (req.params.email);
+   let password = (req.params.password);
 
    console.log("helloooooooooooooooooooo server");
    console.log("server",firstName,lastName,phone,email,password);
@@ -60,11 +60,24 @@ router.get('/all', (req, res) => {
 });
 
 
+
+router.post("/signIn", (req, res) => {
+  console.log("ASDADS", req.body)
+  const user = req.body;
+  console.log("user", user);
+  mongo.authUser(user, response => {
+    console.log("response", response);
+    res.json(response);
+    // response.length > 1 ? res.json(true) : res.json(false);
+  });
+});
+
+
 ///////ahmad///////getlogin
 router.get('/:firstName/:email/:password', (req, res) => {
-  let firstName = encodeURIComponent(req.params.firstName); 
-  let email = encodeURIComponent(req.params.email);
-  let password = encodeURIComponent(req.params.password);
+  let firstName = (req.params.firstName); 
+  let email = (req.params.email);
+  let password = (req.params.password);
 
   console.log("login");
   console.log('server', firstName)

@@ -74,11 +74,29 @@ let getlogin = (cb,firstName,password) => {
   });
 };
 
+let authUser = (user, cb) => {
+  console.log("user DATABASE", user);
+  db.userdata.find(
+    {
+    email: user.email,
+    password: user.password },
+    (error, response) => {
+      if (error) {
+        cb(error);
+      } else {
+        console.log('response: ', response)
+        cb(response);
+      }
+    }
+  );
+};
+
 
 module.exports = {
   creatdefult,
      newuser,
     getall,
     getlogin,
+    authUser,
     newpost
 };

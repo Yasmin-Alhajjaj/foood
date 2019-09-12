@@ -19,7 +19,7 @@ import Input from './component/Input'
 import PostItem from './component/PostItem'
 import Footer from './component/Footer'
 
-import {  NavLink } from "react-router-dom";
+//import {  NavLink } from "react-router-dom";
 
 export default class App extends Component {
     state = {

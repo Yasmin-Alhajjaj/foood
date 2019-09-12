@@ -29,10 +29,10 @@ router.post('/posts', (req, res) => {
 ////////////newpost
 router.post('/:namefood/:description/:location/:booking', (req, res) => {
  
-  let namefood = encodeURIComponent(req.params.namefood);
-  let description = encodeURIComponent(req.params.description);
-  let location = encodeURIComponent(req.params.location);
-  let booking = encodeURIComponent(req.params.booking);
+  let namefood = (req.params.namefood);
+  let description = (req.params.description);
+  let location = (req.params.location);
+  let booking = (req.params.booking);
 
 
   console.log("helloooooooooooooooooooo server");
@@ -80,7 +80,7 @@ mongo.getallpost((result) => {
 /////////updatepost
 router.put('/:bookedup', (req, res) => {
 
-  let bookedup = encodeURIComponent(req.params.bookedup);
+  let bookedup = (req.params.bookedup);
   console.log("update",bookedup)
 
   mongo.updatepost((result) => {
