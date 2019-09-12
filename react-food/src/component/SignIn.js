@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 //import axios from 'axios';
-import {  NavLink } from "react-router-dom";
+// import {  NavLink } from "react-router-dom";
 
 // import SignIn from "/SignIn"
 
@@ -93,35 +93,16 @@ export class SignIn extends Component {
     const { formErrors } = this.state;
     return (
 <>
-<center>
-  <div className="FormTitle">
-              <NavLink
-                to="/sign-in"
-                activeClassName="FormTitle__Link--Active"
-                className="FormTitle__Link"
-              >
-                Sign In
-              </NavLink>{" "}
-              or{" "}
-              <NavLink
-                exact
-                to="/"
-                activeClassName="FormTitle__Link--Active"
-                className="FormTitle__Link"
-              >
-                Sign Up
-              </NavLink>
-            </div>
-            </center>
+
 
 
       <div className="wrapper"   >
         <div className="form-wrapper">
-          <h1 style={{color:"grey"}} >Welcome back!</h1>
+          <h1 style={{color:"grey"}} >Welcome !</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             
           <div className="email">
-              <label htmlFor="firstName">firstName</label>
+              <label htmlFor="first Name">first Name</label>
               <input
                 className={formErrors.firstName.length > 0 ? "error" : null}
                 placeholder="firstName"

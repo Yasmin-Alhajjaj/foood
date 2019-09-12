@@ -77,7 +77,7 @@ let getlogin = (cb,firstName,password) => {
 
 module.exports = {
   creatdefult,
-    // newuser,
+     newuser,
     getall,
     getlogin,
     newpost

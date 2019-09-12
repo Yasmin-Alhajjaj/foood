@@ -5,7 +5,7 @@ import axios from 'axios';
 import Search from './component/Search'
 import Nav from './component/Nav'
 import About from './component/About'
-import Home from './component/Home'
+//import Home from './component/Home'
 import Contact from './component/Contact'
 
 //////////ahmad
@@ -17,20 +17,24 @@ import Input from './component/Input'
 import PostItem from './component/PostItem'
 import Footer from './component/Footer'
 
+import {  NavLink } from "react-router-dom";
+
 export default class App extends Component {
     state = {
       user:[],
       linkLogin: "/Input",
+      Home:"/sign-in"
 
     };
   
     ////////////ahmad/////signup
     newuser=(firstName,lastName,phone,email,password,e)=>{
       e.preventDefault();
-      axios.post(`/user/${firstName}/${lastName}/${phone}/${email}/${password}`)
+      axios.post(`http://localhost:9000/user/${firstName}/${lastName}/${phone}/${email}/${password}`)
       .then(response => {
         // this.setState({ user: response.data });
         alert( `sucssfuly to Creat the new acount`)
+        window.location = this.state.Home;
       });
    
   };
@@ -66,7 +70,28 @@ export default class App extends Component {
 
         <Nav/>
 
-  <Route path="/" exact component={Home} />
+        <center>
+  <div className="FormTitle">
+              <NavLink
+                to="/sign-in"
+                activeClassName="FormTitle__Link--Active"
+                className="FormTitle__Link"
+              >
+                Sign In
+              </NavLink>{" "}
+              or{" "}
+              <NavLink
+                exact
+                to="/"
+                activeClassName="FormTitle__Link--Active"
+                className="FormTitle__Link"
+              >
+                Sign Up
+              </NavLink>
+            </div>
+            </center>
+
+  {/* <Route path="/" exact component={Home} /> */}
   <Route path="/About"  component={About} />
   <Route path="/Contact"  component={Contact} />
   <Route path="/Input"  component={Search} />

@@ -17,9 +17,9 @@ router.get('/defult', (req, res) => {
 });
 
 /////ahmad///////newuser
-// router.post('/:firstName/:lastName/:phone/:email/:password', (req, res) => {
+ router.post('/:firstName/:lastName/:phone/:email/:password', (req, res) => {
 ////////////newuser
-router.post('newuser', (req, res) => {
+//router.post('newuser', (req, res) => {
  
    let firstName = encodeURIComponent(req.params.firstName);
    let lastName = encodeURIComponent(req.params.lastName);
