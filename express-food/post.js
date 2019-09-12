@@ -49,9 +49,24 @@ router.post('/:namefood/:description/:location/:booking', (req, res) => {
 /////////getallpost
 router.get('/all', (req, res) => {
 mongo.getallpost((result) => {
+  console.log('result:', result)
    res.json(result);
  }) 
- });
+});
+
+
+//  /////////getalllocation
+// router.get('/:location', (req, res) => {
+//   let location = encodeURIComponent(req.params.location);
+
+//   mongo.getalllocation((result) => {
+//     console.log('result:', result)
+//      res.json(result);
+//    },location) 
+
+
+//  });
+
  //////////Post
  router.post('/post',(req,res)=>{
    console.log('req.body', req.body)
@@ -74,14 +89,4 @@ router.put('/:bookedup', (req, res) => {
 });
 
 
-
 module.exports = router;
-
-
-
-
-
-
-
-
-

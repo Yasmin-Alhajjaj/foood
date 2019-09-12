@@ -16,8 +16,8 @@ export default class Counter extends Component {
     render(){
         return(
             <>
-              <div style={{borderRadius: '50%',display: 'inline',padding: '10px', backgroundColor: 'red'}}>
-                {this.state.counter}
+              <div style={{borderRadius: '30%',fontSize:"19px", color:"white" ,display: 'inline',padding: '7px', backgroundColor: 'blue', width:"100px"}}>
+                {this.state.counter} donors
               </div>
             </>
         )

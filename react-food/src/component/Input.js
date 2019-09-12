@@ -13,12 +13,27 @@ export default class Input extends Component {
       booking: true}
     };
 
+    cleanInput = () => {
+      this.setState({ form:{
+        namefood :"",
+        amount:"",
+        description:"",
+        location:"",
+        file: '',
+        imageUrl: '',
+        booking: true} });
+    };
+
     handleInput = e => {
         e.preventDefault();
         let name = e.target.name
         let value = e.target.value
         if(name === "location"){
-          this.state.form.location = e.target.value
+          this.setState({form: { 
+            ...this.state.form,
+            location:e.target.value}
+         })  
+         //this.state.form.location = e.target.value
         }else{
          this.setState({form: { 
            ...this.state.form,
@@ -27,25 +42,30 @@ export default class Input extends Component {
       }
     }
 
-      Share= (newPost) => {
-        //  e.preventDefault();
+      Share= (newPost,cleanInput) => {
+         // e.preventDefault();
             axios.post(`http://localhost:9000/post/post`,newPost)
             .then(res => {
               console.log('res.data', res.data)
-                this.state.form=res.data})
-            .catch(err => {
-              console.log(err);
-            })
+
+               this.setState({form: res.data
+             }) 
+
+               // this.state.form=res.data
+              
+              
+              })
+            cleanInput();
           }
 
       handleImageChange = (e) => {
-        e.preventDefault();
+       e.preventDefault();
         let reader = new FileReader();
         let file = e.target.files[0];
         reader.onloadend = () => {
             this.setState({form: { 
               ...this.state.form,
-              file: file,
+              file: file.name,
               imageUrl: reader.result}
            })        }
         reader.readAsDataURL(file)
@@ -55,12 +75,12 @@ export default class Input extends Component {
       let {imageUrl} = this.state.form;
       let $image = null;
       if (imageUrl) {
-        $image = (<div style={{border: '2px solid blue'}}><img style={{ width: '100px', height: '100px'}} src={imageUrl} /></div>);
+        $image = (<div style={{border: '2px solid blue'}}><img alt="" style={{ width: '100px', height: '100px'}} src={imageUrl} /></div>);
       } else {
         $image = (<p>Please upload your meal photo</p>);
       }
         return (
-            <div style={{border: 'solid 2px black'}}>
+            <div className="input" style={{border: 'solid 2px black'}}>
                 <form
           style={{
             padding: "25px"
@@ -70,7 +90,7 @@ export default class Input extends Component {
         >
           <div className="input-group">
             <input
-           
+            value={this.state.form.namefood}
               className="m-2"
               type="text"
               placeholder="namefood"
@@ -79,6 +99,7 @@ export default class Input extends Component {
             />
             <input
             
+            value={this.state.form.amount}
               className="m-2"
               type="text"
               placeholder= "amount"
@@ -86,7 +107,7 @@ export default class Input extends Component {
               name="amount"
             />
              <input
-            
+            value={this.state.form.description}
               className="m-2"
               type="text"
               placeholder="description"
@@ -94,10 +115,13 @@ export default class Input extends Component {
               name="description"
             />
             <select
+            value={this.state.form.location}
               onChange={this.handleInput}
               className="custom-select m-2"
               name="location"
             >
+              
+              <option value="cuontry">Country</option>
               <option name='Irbid' >Irbid</option>
               <option name='Jarash' >Jarash</option>
               <option name='Az-Zarqa' >Az-Zarqa</option>
@@ -123,11 +147,11 @@ export default class Input extends Component {
             {/* {console.log('this.state.form.imageUrl', this.state.form.namefood)}    */}
             {$image}
 
-            <h1>haya:{this.state.form.imageUrl}</h1>
+            {/* <h1>haya:{this.state.form.imageUrl}</h1> */}
             <button
               className="btn btn-outline-success btn-lg"
               type="submit"
-              onClick={this.Share.bind(this,this.state.form)}>
+              onClick={this.Share.bind(this,this.state.form,this.cleanInput)}>
              Share
             </button>
           </div>

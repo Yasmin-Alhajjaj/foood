@@ -9,7 +9,7 @@ export default function About() {
     <div className="about" >
 
   
-  <h1>Contuct</h1>
+  <h1>What We Do</h1>
 
   </div>
   ); 

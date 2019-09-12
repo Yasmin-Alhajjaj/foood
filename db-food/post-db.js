@@ -3,12 +3,15 @@
 const db =require("../database")
 
 ////////////creatdefult
+
 let creatdefult = (cb) => {
   db.fooddata.create(
     {namefood: "xgfbhfzdb",
       amount:"Strid\sfzdfhhgng",
       description: "xfyjchjbString",
       location:"chnmghvString",
+      file:'',
+      imageUrl:"",
       booking: true,
 },(err, data) => {
   
@@ -19,6 +22,7 @@ let creatdefult = (cb) => {
     }
   })
 }
+
 let creatpost = (newPost,cb) => {
   console.log('newPost', newPost)
   db.fooddata.create(newPost,(err, data) => {
@@ -44,7 +48,7 @@ db.fooddata.create(
     if (err) {
       cb(err)
     } else {
-      cb(data)
+      getallpost(cb);
     }
   })
 }
@@ -72,9 +76,21 @@ db.fooddata.find({}, (err, data) => {
 
 
 
+  // /////////getalllocation
+  // let getalllocation = (cb,location) => {
+  //   db.fooddata.find({location:location}, (err, data) => {
+  //       if (err) {
+  //         cb(err);
+  //       } else {
+  //         console.log("data:", data);
+  //         cb(data);
+  //       }
+  //     });
+  //     }
+
   ///////////updatepost
    let  updatepost = (cb,bookedup) => {
-      db.fooddata.updateOne( {numpost:bookedup} ,  { $set: { booking: true }}, (err, data) => {
+      db.fooddata.updateOne( {_id:bookedup} ,  { $set: { booking: false }}, (err, data) => {
         if (err) {
           cb(err);
         } else {
@@ -93,5 +109,6 @@ db.fooddata.find({}, (err, data) => {
     create,
     getallpost,
     updatepost,
-    creatpost   
+    creatpost,
+    // getalllocation   
   }
