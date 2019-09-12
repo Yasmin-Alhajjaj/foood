@@ -98,11 +98,11 @@ export class SignIn extends Component {
 
       <div className="wrapper"   >
         <div className="form-wrapper">
-          <h1 style={{color:"grey"}} >Welcome !</h1>
+          <h1 >Welcome !</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             
           <div className="email">
-              <label htmlFor="first Name">first Name</label>
+              <label htmlFor="first Name">Name</label>
               <input
                 className={formErrors.firstName.length > 0 ? "error" : null}
                 placeholder="firstName"

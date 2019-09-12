@@ -8,6 +8,8 @@ import About from './component/About'
 //import Home from './component/Home'
 import Contact from './component/Contact'
 
+import "./App.css";
+
 //////////ahmad
 import SignUp from "./component/SignUp";
 import SignIn from "./component/SignIn";
@@ -66,11 +68,11 @@ export default class App extends Component {
     render() {
       return(
         // <>
-      <Router  >
+      <Router >
 
         <Nav/>
 
-        <center>
+        {/* <center>
   <div className="FormTitle">
               <NavLink
                 to="/sign-in"
@@ -89,7 +91,7 @@ export default class App extends Component {
                 Sign Up
               </NavLink>
             </div>
-            </center>
+            </center> */}
 
   {/* <Route path="/" exact component={Home} /> */}
   <Route path="/About"  component={About} />

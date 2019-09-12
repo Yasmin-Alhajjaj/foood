@@ -53,7 +53,7 @@ export default function Nav() {
 <ul className="navbar-nav">
 <Link  to="/" > <li className="nav-item active  col-2 ">Home</li> </Link>
 <Link  to="/About" > <li className="nav-item col ">About Us</li> </Link>
-<Link to="/Contact" ><li className="nav-item col">What We Do</li></Link>
+<Link to="/Contact" ><li className="nav-item col">Contact Us</li></Link>
 
 </ul>
 <Counter/>
