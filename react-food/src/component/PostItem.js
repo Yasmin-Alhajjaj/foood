@@ -71,7 +71,7 @@ update=(bookedup)=>{
                </ul>
                <div className="card-body" >
                {/* <button  className="card-link">{post.booking}</button> */}
-              <button className="btn btn-dark"  style={{width:"100%" , color:(post.booking)?"green":"red"  }}  >BOOKING</button>
+              <button className="btn btn-dark"  style={{width:"100%" , color:(post.booking)?"#bae637":"red"  }}  >BOOKING</button>
                </div>
                </div>{post.booking}
              </div>

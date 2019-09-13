@@ -84,9 +84,9 @@ export default class Input extends Component {
       let {imageUrl} = this.state.form;
       let $image = null;
       if (imageUrl) {
-        $image = (<img style={{border:'1px solid #2A7E7C',borderRadius: '5px ', width: '200px', height: '200px', margin: '20px'}} src={imageUrl} />);
+        $image = (<img alt="" style={{border:'1px solid #2A7E7C',borderRadius: '5px ', width: '200px', height: '200px', margin: '20px'}} src={imageUrl} />);
       } else {
-        $image = (<img style={{border:'1px solid #2A7E7C',borderRadius: '5px ', width: '200px', height: '200px', margin: '20px'}} src='https://wolper.com.au/wp-content/uploads/2017/10/image-placeholder.jpg'></img>);
+        $image = (<img alt="" style={{border:'1px solid #2A7E7C',borderRadius: '5px ', width: '200px', height: '200px', margin: '20px'}} src='https://wolper.com.au/wp-content/uploads/2017/10/image-placeholder.jpg'></img>);
       }
         return (
         <div style={{
@@ -101,17 +101,28 @@ export default class Input extends Component {
           backgroundImage: `url(${imageBackground})`,
           gridTemplateColumns: '1fr'}}>
             {/* <img style={{maxWidth: '100%', maxHeight: '100%'}} src='https://commitchange.s3.amazonaws.com/uploads/campaigns/main_image/2427/Dinner.jpg'></img> */}
-          <form
-            style={{
+         
+         
+         <div  style={{
               padding: "25px",
               gridColumn: '1/2',
               display: 'grid',
               justifyContent: 'space-around',
               gridTemplateColumns: '1fr 1fr',
 
-            }}
+            }}>
+         
+          <form
+            // style={{
+            //   padding: "25px",
+            //   gridColumn: '1/2',
+            //   display: 'grid',
+            //   justifyContent: 'space-around',
+            //   gridTemplateColumns: '1fr 1fr',
+
+            // }}
             // className="form-inline align-self-center"
-            // onSubmit={this.handleInput}
+             onSubmit={this.handleInput}
           >
 
           <div 
@@ -157,7 +168,7 @@ export default class Input extends Component {
             <select
               style={input}
               onChange={this.handleInput}
-              class="custom-select mr-sm-2"
+              className="custom-select mr-sm-2"
               name="location"
 
               // style={{display: 'block', width: '225px', margin: '0 auto'}}
@@ -176,7 +187,7 @@ export default class Input extends Component {
               <option name='Mafraq' >Mafraq</option>
               <option name='Jarash' >Jarash</option>
             </select>
-            <button 
+            {/* <button 
               style={{
                 margin: '10px',
                 width: '225px',
@@ -184,7 +195,7 @@ export default class Input extends Component {
               }} 
               className='btn btn-info'>
               Location!!
-            </button>
+            </button> */}
               <button
                 style={{width: '100px',
                 height: '80px',
@@ -195,7 +206,8 @@ export default class Input extends Component {
                 Share
               </button>
           </div>
-​
+​        </form> 
+
           <div
             style={{
               gridColumn: '1/2', 
@@ -219,8 +231,8 @@ export default class Input extends Component {
            className="btn btn-danger btn-lg"
            onClick={()=>this.input.click()}>Upload Image
           </button>
-          </div>          
-        </form> 
+          </div>  
+          </div>        
             </div>
         )
     }

@@ -23,7 +23,7 @@ export default function Nav() {
 
       </nav> */}
 <nav className="navbar navbar-expand-lg navbar-light bg-light row">
- <h1 className="col-4" >your food is my food</h1>
+ <h1 className="col-4" >Hungry Free</h1>
  <div className="col-4" ><div className="spinner-grow text-primary" role="status">
   <span className="sr-only">Loading...</span>
 </div>

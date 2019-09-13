@@ -77,16 +77,16 @@ db.fooddata.find({}, (err, data) => {
 
 
   // /////////getalllocation
-  // let getalllocation = (cb,location) => {
-  //   db.fooddata.find({location:location}, (err, data) => {
-  //       if (err) {
-  //         cb(err);
-  //       } else {
-  //         console.log("data:", data);
-  //         cb(data);
-  //       }
-  //     });
-  //     }
+  let getalllocation = (cb,location) => {
+    db.fooddata.find({location:location}, (err, data) => {
+        if (err) {
+          cb(err);
+        } else {
+          console.log("data:", data);
+          cb(data);
+        }
+      });
+      }
 
   ///////////updatepost
    let  updatepost = (cb,bookedup) => {
@@ -110,5 +110,5 @@ db.fooddata.find({}, (err, data) => {
     getallpost,
     updatepost,
     creatpost,
-    // getalllocation   
+     getalllocation   
   }

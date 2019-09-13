@@ -19,6 +19,8 @@ import Input from './component/Input'
 import PostItem from './component/PostItem'
 import Footer from './component/Footer'
 
+import Searchitem from './component/Searchitem'
+
 //import {  NavLink } from "react-router-dom";
 
 export default class App extends Component {
@@ -40,80 +42,22 @@ export default class App extends Component {
       });
    
   };
-
-  ///////////ahmad ///login
-  getlogin=(firstName,email,password)=>{
-    console.log("getUser");
-    console.log('firstName', firstName)
-    console.log(email);
-    console.log(password)
-    axios.get(`/user/${firstName}/${email}/${password}`)
-    .then(response => {
-      this.setState({ user: response.data });
-      if (this.state.user.length > 0) {
-        console.log(this.state.user)
-        window.location = this.state.linkLogin;
-      }  
-  });
-
-};
-
-
-
-    
-
-
-
-
-    render() {
+render() {
       return(
         // <>
       <Router >
 
         <Nav/>
 
-        {/* <center>
-  <div className="FormTitle">
-              <NavLink
-                to="/sign-in"
-                activeClassName="FormTitle__Link--Active"
-                className="FormTitle__Link"
-              >
-                Sign In
-              </NavLink>{" "}
-              or{" "}
-              <NavLink
-                exact
-                to="/"
-                activeClassName="FormTitle__Link--Active"
-                className="FormTitle__Link"
-              >
-                Sign Up
-              </NavLink>
-            </div>
-            </center> */}
 
-  {/* <Route path="/" exact component={Home} /> */}
   <Route path="/About"  component={About} />
   <Route path="/Contact"  component={Contact} />
   <Route path="/Input"  component={Search} />
   <Route path="/Input"  component={Input} />
   <Route path="/Input"  component={PostItem} />
-
-
-
-{/* //////////////Ahmad */}
- <div className="App">
-          <div className="App__Aside">
-          </div>
-
-          <div className="App__Form">
-           
-
-            <Route exact path="/" component={() => <SignUp newuser={this.newuser}/>} />
-            <Route path="/sign-in" component={() => <SignIn getlogin={this.getlogin}/>}/>
-          </div>
-        </div>
+  <Route exact path="/" component={() => <SignUp newuser={this.newuser}/>} />
+  <Route path="/sign-in" component={SignIn}/>
+  <Route path="/Searchitem"  component={Searchitem} />      
 
 
 

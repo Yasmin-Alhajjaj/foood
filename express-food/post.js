@@ -56,16 +56,16 @@ mongo.getallpost((result) => {
 
 
 //  /////////getalllocation
-// router.get('/:location', (req, res) => {
-//   let location = encodeURIComponent(req.params.location);
+router.get('/:location', (req, res) => {
+  let location = (req.params.location);
 
-//   mongo.getalllocation((result) => {
-//     console.log('result:', result)
-//      res.json(result);
-//    },location) 
+  mongo.getalllocation((result) => {
+    console.log('result:', result)
+     res.json(result);
+   },location) 
 
 
-//  });
+ });
 
  //////////Post
  router.post('/post',(req,res)=>{
