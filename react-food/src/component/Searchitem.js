@@ -3,11 +3,33 @@ import React, { Component } from 'react'
 //import Navbar from 'react-bootstrap/Navbar'
 //import { BrowserRouter as Router,Link } from 'react-router-dom';
 //import Search from './Search'
+import axios from 'axios'
 
 export default class Searchitem extends Component {
     state = {
       alllocation:[]
     };
+
+
+
+
+
+
+    updateloc=(bookedup)=>{
+
+      axios.put(`http://localhost:9000/post/${bookedup}`)
+      //console.log('bookedup', bookedup)
+      .then(res => {
+        this.setState({ alllocation: res.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    
+    
+    }
+
+    
 
     render() {
 
@@ -32,7 +54,7 @@ export default class Searchitem extends Component {
                </ul>
                <div className="card-body" >
                {/* <button  className="card-link">{this.props.alllocation.booking}</button> */}
-              <button className="btn btn-dark"  style={{width:"100%" , color:(this.props.alllocation.booking)?"green":"red"  }}  >BOOKING</button>
+              <button className="btn btn-dark" onClick={this.updateloc.bind(this,this.props.alllocation._id)}  style={{width:"100%" , color:(this.props.alllocation.booking)?"green":"red"  }}  >BOOKING</button>
                </div>
                </div>{this.props.alllocation.booking}
              </div>

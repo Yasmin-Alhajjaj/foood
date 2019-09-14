@@ -13,6 +13,7 @@
 
 } */
 
+
 .about {
   /* width: 100% ; */
   background-image: url("https://image.freepik.com/free-photo/basil-leaves-chia-seeds-halved-tomato-oil-arranged-white-wooden-floor_23-2148026880.jpg");
@@ -30,7 +31,7 @@
 
 
 
-
+/* ////////////login& signup/////////// */
 
 .wrapper {
     height: 830px;
@@ -187,8 +188,9 @@
     font-weight: lighter;
   }
 
-
-  /* .footer {
+/* /////////////for footer /////////////// */
+ 
+/* .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -197,21 +199,21 @@
     text-align: center;
   } */
 
-  .footer {
+  /* .footer {
     bottom: "0";
     width: "100%"; 
-    /* height: "110px";         */
+    height: "110px";        
     background-color: #111;
     color : "white";
     text-align : "center";
     padding: "115px";
- }
+ } */
   
   .container{
     margin-top: "100px";
     color: #fff;
     width: "100%";
-    /* height: "110px"; */
+    height: "110px";
     padding: "115px";        
   }
   
@@ -252,12 +254,82 @@
   .fa {
       opacity: "0.7";
       transition: "1s";
-      -webkit-transition: "1s";
+      /* -webkit-transition: "1s"; */
   }
   
   .fa:hover{
       opacity: "1";
       transition: "1s";
-      -webkit-transition: "1s";}
+      /* -webkit-transition: "1s"; */
+    }
+
+
+/* /////////////////////for counter///////////////// */
+    .pinkBg {
+      background-color: #ed184f!important;
+      background-image: linear-gradient(90deg, #fd5581, #fd8b55);
+  }
+  .intro-banner-vdo-play-btn{
+      height:60px;
+      width:60px;
+      position:absolute;
+      top:50%;
+      left:50%;
+      text-align:center;
+      margin:-30px 0 0 -30px;
+      border-radius:100px;
+      z-index:1
+  }
+  .intro-banner-vdo-play-btn i{
+      line-height:56px;
+      font-size:30px
+  }
+  .intro-banner-vdo-play-btn .ripple{
+      position:absolute;
+      width:160px;
+      height:160px;
+      z-index:-1;
+      left:50%;
+      top:50%;
+      opacity:0;
+      margin:-80px 0 0 -80px;
+      border-radius:100px;
+      -webkit-animation:ripple 1.8s infinite;
+      animation:ripple 1.8s infinite
+  }
+  
+  @-webkit-keyframes ripple{
+      0%{
+          opacity:1;
+          -webkit-transform:scale(0);
+          transform:scale(0)
+      }
+      100%{
+          opacity:0;
+          -webkit-transform:scale(1);
+          transform:scale(1)
+      }
+  }
+  @keyframes ripple{
+      0%{
+          opacity:1;
+          -webkit-transform:scale(0);
+          transform:scale(0)
+      }
+      100%{
+          opacity:0;
+          -webkit-transform:scale(1);
+          transform:scale(1)
+      }
+  }
+  .intro-banner-vdo-play-btn .ripple:nth-child(2){
+      animation-delay:.3s;
+      -webkit-animation-delay:.3s
+  }
+  .intro-banner-vdo-play-btn .ripple:nth-child(3){
+      animation-delay:.6s;
+      -webkit-animation-delay:.6s
+  }
+  
 
      

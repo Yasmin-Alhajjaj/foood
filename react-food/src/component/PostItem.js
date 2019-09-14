@@ -30,7 +30,8 @@ export default class PostItem extends Component {
 
 update=(bookedup)=>{
 
-  axios.put(`http://localhost:9000/post/${!(bookedup)}`)
+  axios.put(`http://localhost:9000/post/${bookedup}`)
+  //console.log('bookedup', bookedup)
   .then(res => {
     this.setState({ posts: res.data });
     console.log('Post', this.state.posts)
@@ -71,7 +72,7 @@ update=(bookedup)=>{
                </ul>
                <div className="card-body" >
                {/* <button  className="card-link">{post.booking}</button> */}
-              <button className="btn btn-dark"  style={{width:"100%" , color:(post.booking)?"#bae637":"red"  }}  >BOOKING</button>
+              <button className="btn btn-dark" onClick={this.update.bind(this,post._id)}  style={{width:"100%" , color:(post.booking)?"#bae637":"red"  }}  >BOOKING</button>
                </div>
                </div>{post.booking}
              </div>

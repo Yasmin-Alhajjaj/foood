@@ -8,10 +8,10 @@ export default class Footer extends Component {
             left: "0",
             bottom: "0",
             width: "100%",             
-            backgroundColor: "#4B5320",
+            backgroundColor: "black",
             color : "white",
             textAlign : "center",
-            opacity:"0.5",
+            // opacity:"0.5",
            //  display: 'flex', 
             // alignContent: 'flex-end',
            // fixed:"bottom"
@@ -30,12 +30,16 @@ export default class Footer extends Component {
 
 //              
 
-<div className="footer">
+<div className="footer" style={footer}>
 <div className="container">
-        <a href='#'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
-        <a href='#'><i class="fa fa-twitter fa-3x fa-fw"></i></a>
-        <a href='#'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
-        <a href='#'><i class="fa fa-linkedin fa-3x fa-fw"></i></a>
+<a href='#'><i className="fa fa-twitch fa-3x fa-fw"></i></a>
+              <a href='#'><i className="fa fa-facebook fa-3x fa-fw"></i></a>
+              <a href='#'><i className="fa fa-twitter fa-3x fa-fw"></i></a>
+              <a href='#'><i className="fa fa-youtube-play fa-3x fa-fw"></i></a>
+              <a href='#'><i className="fa fa-rss fa-3x fa-fw"></i></a>
+              <a href='#'><i className="fa fa-linkedin fa-3x fa-fw"></i></a>
+        <p>Contact information: <a href="mailto:someone@example.com">
+                        someone@example.com</a>.</p>
 </div>          
 
 </div>
