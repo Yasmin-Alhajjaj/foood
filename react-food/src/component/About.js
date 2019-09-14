@@ -36,7 +36,6 @@ export default class About extends Component{
       }}>
       About Us</h1><br/>
    <div><h3 style={{fontFamily: 'Acme, sans-serif', color:'#074F33'}}>Who we are..</h3></div>
-   <br/>
   <div> 
   <p style={{fontFamily: 'Acme, sans-serif', color:'#074F33'}}>Your food is my food is an Youth Initiative aim to eliminate the Community stratification, and incourage feeling with others. <br/><br/>
   This Initiative focuses on three main issuues in the society, and keep trying to solve it!<br/><br/>

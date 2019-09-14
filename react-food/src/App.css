@@ -276,6 +276,9 @@
       top:50%;
       left:50%;
       text-align:center;
+      color: #ffffff;
+      font-size :25px ;
+      font-weight: bold;
       margin:-30px 0 0 -30px;
       border-radius:100px;
       z-index:1
