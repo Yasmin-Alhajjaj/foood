@@ -1,5 +1,4 @@
 import React from "react";
-//import { BrowserRouter as Router, Route,Link } from 'react-router-dom';
 import "../App.css";
 export default function Contact() {
   
@@ -9,12 +8,8 @@ export default function Contact() {
     <div 
     className="contact"
     style={{
-      // margin: '50px 200px 50px 200px', 
-      // border: '1px solid #BAAFC4',
       width: '50%',
       padding: '70px',
-      // margin: '0 auto',
-      // marginTop: '80px',
       fontSize: '1.5em', 
       borderRadius: '10px'}} >
 ​
@@ -29,7 +24,6 @@ export default function Contact() {
       <br/><br/>
       To report any technical issues, please contact Oola at <a href="mailto:support@ourfood.com">support@ourfood.com</a>.
       <br/><br/>
-      {/* Want to write for us? Check out our freelancer application here. */}
     </p>
   </div>
   </div>

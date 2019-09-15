@@ -8,16 +8,12 @@ export default class Search extends Component {
       search:"",
       alllocation:[],
       linksearch: "/Searchitem"
-
     };
-
 
     change=(e)=>{
       this.setState({
         search: e.target.value
       })
-
-    
     }
   
     searchloc=(location)=>{
@@ -25,37 +21,23 @@ export default class Search extends Component {
        .then(res => {
         this.setState({ alllocation: res.data });
        console.log('Poalllocationst', this.state.alllocation)
-
-      // window.location = this.state.linksearch;
-
-
     })
-    
-
      .catch(err => {
        console.log(err);
      });
-
-    }
+        }
 
 
     render() {
-     // console.log(this.state.search)
       return(
      <>
-     <div className="row" >
-
-     {/* <input type="text" value={this.state.search} placeholder="Search about country" onChange={this.change} /> */}
-    
+     <div className="row" >    
      <select
-
             value={this.state.search}
               onChange={this.change}
               className="custom-select m-2 col-11"
-              name="search"
-              
-            >
-              
+              name="search"   
+            >  
               <option value="cuontry">Search by Country</option>
               <option name='Irbid' >Irbid</option>
               <option name='Jarash' >Jarash</option>
@@ -71,12 +53,9 @@ export default class Search extends Component {
               <option name='Jarash' >Jarash</option>
             </select>
 
-            {/* <button className="btn" onClick={this.se}  ><i className="fa fa-search"></i></button> */}
 
      <button className="btn" onClick={this.searchloc.bind(this,this.state.search)}  ><i className="fa fa-search"></i></button>
      </div>
-
-     {/* <Route path="/Searchitem" component={() => <Searchitem location={ this.state.alllocation}/>       */}
      {this.state.alllocation.map((alllocation, key) =>
               <Router>
                 <Route component={
@@ -88,10 +67,5 @@ export default class Search extends Component {
               </Router>
             )
             } 
-
-
-
-
       </>
-     
      ); }}

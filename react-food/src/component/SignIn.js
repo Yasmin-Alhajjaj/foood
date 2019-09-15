@@ -1,9 +1,9 @@
+
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
 
-// import SignIn from "/SignIn"
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
@@ -58,7 +58,8 @@ console.log("REACT", user)
     axios
     .post(`http://localhost:9000/user/signIn`, user)
     .then(response => {
-          console.log("React:get response.data", response.data.length >= 1 ? true : false);
+          console.log("React:get response.data", response.data.length >= 1 ? window.location = this.state.linkLogin : false
+          );
           if(response.data.length === 0)
           {
             let formError ={...this.state.formErrors} 
@@ -67,7 +68,7 @@ console.log("REACT", user)
 
           }
 
-            window.location = this.state.linkLogin;
+            // window.location = this.state.linkLogin;
            
 
 

@@ -36,7 +36,7 @@ router.post('/:namefood/:description/:location/:booking', (req, res) => {
 
 
   console.log("helloooooooooooooooooooo server");
-  console.log("server",namefood,description,location,booking);
+  //console.log("server",namefood,description,location,booking);
  
   mongo.newpost((result) => {
      res.json(result);
@@ -49,7 +49,7 @@ router.post('/:namefood/:description/:location/:booking', (req, res) => {
 /////////getallpost
 router.get('/all', (req, res) => {
 mongo.getallpost((result) => {
-  console.log('result:', result)
+  //console.log('result:', result)
    res.json(result);
  }) 
 });
@@ -60,7 +60,7 @@ router.get('/:location', (req, res) => {
   let location = (req.params.location);
 
   mongo.getalllocation((result) => {
-    console.log('result:', result)
+    //console.log('result:', result)
      res.json(result);
    },location) 
 
@@ -69,10 +69,10 @@ router.get('/:location', (req, res) => {
 
  //////////Post
  router.post('/post',(req,res)=>{
-   console.log('req.body', req.body)
+  // console.log('req.body', req.body)
    let newPost=req.body;
    mongo.creatpost(newPost, result => {
-     console.log('result', result)
+    // console.log('result', result)
     res.send(result);
   });
 });
@@ -81,7 +81,7 @@ router.get('/:location', (req, res) => {
 router.put('/:bookedup', (req, res) => {
 
   let bookedup = (req.params.bookedup);
-  console.log("update",bookedup)
+ // console.log("update",bookedup)
 
   mongo.updatepost((result) => {
     res.json(result);

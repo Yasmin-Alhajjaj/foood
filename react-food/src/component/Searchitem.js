@@ -1,8 +1,4 @@
-
 import React, { Component } from 'react'
-//import Navbar from 'react-bootstrap/Navbar'
-//import { BrowserRouter as Router,Link } from 'react-router-dom';
-//import Search from './Search'
 import axios from 'axios'
 
 export default class Searchitem extends Component {
@@ -12,34 +8,23 @@ export default class Searchitem extends Component {
 
 
 
-
-
-
     updateloc=(bookedup)=>{
-
       axios.put(`http://localhost:9000/post/${bookedup}`)
-      //console.log('bookedup', bookedup)
       .then(res => {
         this.setState({ alllocation: res.data });
       })
       .catch(err => {
         console.log(err);
       });
-    
-    
     }
 
-    
-
+  
     render() {
-
-
       if(this.props.alllocation === undefined)
   return null;
         return(
 
        <div  key={this.props.alllocation.key} className="row postitem row" style={{display:"flex"}} >
-
        <div className="col-4" style={{ marginTop:"30px" ,display:"flex" , justifyContent:"space-around"}} >
            <div className="card" style={{ width: "25rem",border: 'solid 1px black' }}>
              <img src={this.props.alllocation.imageUrl}  className="card-img-top" alt=""/>
@@ -58,18 +43,6 @@ export default class Searchitem extends Component {
                </div>
                </div>{this.props.alllocation.booking}
              </div>
-            
-            
-            
-            
-            
-            
-            
-            {/* <Link to="/Input">
-   <button type="button" className="btn btn-primary" style={{marginRight:"10px"}}>Back</button>
-   </Link> */}
-
-
-
+           
            </div>
         )}}

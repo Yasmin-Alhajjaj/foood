@@ -4,21 +4,6 @@ import { Link } from "react-router-dom";
 
 const emailRegex = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
 
-// const formValid = ({ formErrors, ...rest }) => {
-//   let valid = true;
-
-//   // validate form errors being empty
-//   Object.values(formErrors).forEach(val => {
-//     val.length > 0 && (valid = false);
-//   });
-
-//   // validate the form was filled out
-//   Object.values(rest).forEach(val => {
-//     val === null && (valid = false);
-//   });
-
-//   return valid;
-// };
 
 export class SignUp extends Component {
   constructor(props) {
@@ -40,22 +25,6 @@ export class SignUp extends Component {
       }
     };
   }
-
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   if (formValid(this.state)) {
-  //     console.log(`
-  //     --SUBMITTING--
-  //     First Name: ${this.state.firstName}
-  //     Last Name: ${this.state.lastName}
-  //     Phone Number: ${this.state.phoneNumber}
-  //     Email: ${this.state.email}
-  //     Password: ${(this.state.password)}
-  //     `);
-  //   } else {
-  //     console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
-  //   }
-  // };
 
   handleChange = e => {
     e.preventDefault();

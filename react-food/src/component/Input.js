@@ -25,8 +25,7 @@ export default class Input extends Component {
     };
 
 
-    clean=()=>{
-
+clean=()=>{
       this.setState({
         form:{
         ...this.state.form, 
@@ -41,8 +40,7 @@ export default class Input extends Component {
       })
     }
     
-    handleInput = e => {
-      //  e.preventDefault();
+handleInput = e => {
         let name = e.target.name
         let value = e.target.value
         if(name === "location"){
@@ -55,11 +53,11 @@ export default class Input extends Component {
       }
       console.log('this.state', this.state)
     }
-      Share= (newPost,clean) => {
+
+Share= (newPost,clean) => {
             axios.post(`http://localhost:9000/post/post`,newPost)
             .then(res => {
               console.log('res.data', res.data)
-              // this.state.form=res.data
               this.setState({form: res.data})
               console.log('this.state', this.state)})
             .catch(err => {
@@ -67,7 +65,8 @@ export default class Input extends Component {
             })
             clean()
           }
-      handleImageChange = (e) => {
+
+handleImageChange = (e) => {
         e.preventDefault();
         let reader = new FileReader();
         let file = e.target.files[0];
@@ -80,7 +79,8 @@ export default class Input extends Component {
            })        }
         reader.readAsDataURL(file)
       }
-    render() {
+
+render() {
       let {imageUrl} = this.state.form;
       let $image = null;
       if (imageUrl) {
@@ -93,15 +93,11 @@ export default class Input extends Component {
           border: 'solid 1px grey',
           borderRadius: '7px',
           margin: '0 auto',
-          // width: '60%',
           height: '450px',
           display: 'grid',
           padding: '30px',
-          // justifyContent: 'space-around',
           backgroundImage: `url(${imageBackground})`,
           gridTemplateColumns: '1fr'}}>
-            {/* <img style={{maxWidth: '100%', maxHeight: '100%'}} src='https://commitchange.s3.amazonaws.com/uploads/campaigns/main_image/2427/Dinner.jpg'></img> */}
-         
          
          <div  style={{
               padding: "25px",
@@ -113,16 +109,7 @@ export default class Input extends Component {
             }}>
          
           <form
-            // style={{
-            //   padding: "25px",
-            //   gridColumn: '1/2',
-            //   display: 'grid',
-            //   justifyContent: 'space-around',
-            //   gridTemplateColumns: '1fr 1fr',
-
-            // }}
-            // className="form-inline align-self-center"
-             onSubmit={this.handleInput}
+          onSubmit={this.handleInput}
           >
 
           <div 
@@ -136,7 +123,6 @@ export default class Input extends Component {
               width: '70%'
               }}>
             <input
-              // className="m-2"
               type="text"
               placeholder="Food Type"
               name="namefood"
@@ -145,7 +131,6 @@ export default class Input extends Component {
               value={this.state.form.namefood}
             />
             <input
-              // className="m-2"
               type="text"
               placeholder= "Amount"
               onChange={this.handleInput}
@@ -155,8 +140,6 @@ export default class Input extends Component {
 
             />
              <input
-            
-              // className="m-2"
               type="text"
               placeholder="Brief Description"
               onChange={this.handleInput}
@@ -171,7 +154,6 @@ export default class Input extends Component {
               className="custom-select mr-sm-2"
               name="location"
 
-              // style={{display: 'block', width: '225px', margin: '0 auto'}}
             >
               <option name='select' >Select country</option>
               <option name='Irbid' >Irbid</option>
@@ -187,15 +169,7 @@ export default class Input extends Component {
               <option name='Mafraq' >Mafraq</option>
               <option name='Jarash' >Jarash</option>
             </select>
-            {/* <button 
-              style={{
-                margin: '10px',
-                width: '225px',
-                height: '40px'
-              }} 
-              className='btn btn-info'>
-              Location!!
-            </button> */}
+        
               <button
                 style={{width: '100px',
                 height: '80px',
