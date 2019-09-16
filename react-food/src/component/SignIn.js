@@ -46,20 +46,19 @@ export class SignIn extends Component {
     }
 
     if (formValid(this.state)) {
-      console.log(`
-      --SUBMITTING--
-      Email: ${this.state.email}
-      Password: ${(this.state.password)}
-      `);
+      // console.log(`
+      // --SUBMITTING--
+      // Email: ${this.state.email}
+      // Password: ${(this.state.password)}
+      // `);
     } else {
-      console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
+      // console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
     }
-console.log("REACT", user)
+//console.log("REACT", user)
     axios
     .post(`http://localhost:9000/user/signIn`, user)
     .then(response => {
-          console.log("React:get response.data", response.data.length >= 1 ? window.location = this.state.linkLogin : false
-          );
+          // console.log("React:get response.data", response.data.length >= 1 ? window.location = this.state.linkLogin : false);
           if(response.data.length === 0)
           {
             let formError ={...this.state.formErrors} 
@@ -69,13 +68,16 @@ console.log("REACT", user)
           }
 
             // window.location = this.state.linkLogin;
-           
+            this.props.history.push({
+              pathname: '/input',
+              state: response.data // you recieve as this.props.location.state
+            })
 
 
 
     })
     .catch(error => {
-      console.log("Error", error);
+     // console.log("Error", error);
     });
   };
 
@@ -84,8 +86,8 @@ console.log("REACT", user)
     const { name, value } = e.target;
     let formErrors = this.state.formErrors;
 
-    console.log("Name: ", name)
-    console.log("Value: ", value)
+  //  console.log("Name: ", name)
+    //console.log("Value: ", value)
     
 
     switch (name) {

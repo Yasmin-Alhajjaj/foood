@@ -32,6 +32,8 @@ let foodSchema = new mongoose.Schema({
   file:String,
   imageUrl:String,
   booking: Boolean,
+  firstName:String,
+  phone:Number,
 });
 
 

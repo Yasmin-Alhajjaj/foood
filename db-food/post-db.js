@@ -24,7 +24,7 @@ let creatdefult = (cb) => {
 }
 
 let creatpost = (newPost,cb) => {
-  console.log('newPost', newPost)
+  // console.log('newPost', newPost)
   db.fooddata.create(newPost,(err, data) => {
     if (err) {
       cb(err)
@@ -68,7 +68,7 @@ db.fooddata.find({}, (err, data) => {
     if (err) {
       cb(err);
     } else {
-      console.log("data:", data);
+     // console.log("data:", data);
       cb(data);
     }
   }).sort({_id: -1});
@@ -82,7 +82,7 @@ db.fooddata.find({}, (err, data) => {
         if (err) {
           cb(err);
         } else {
-          console.log("data:", data);
+         // console.log("data:", data);
           cb(data);
         }
       });
@@ -94,7 +94,7 @@ db.fooddata.find({}, (err, data) => {
         if (err) {
           cb(err);
         } else {
-          console.log("data:", data);
+          // console.log("data:", data);
           getallpost(cb);
         }
       });
